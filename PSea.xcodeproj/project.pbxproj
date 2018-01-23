@@ -53,7 +53,7 @@
 		9A445B58201764F800DCB11F = {
 			isa = PBXGroup;
 			children = (
-				9A445B762017650A00DCB11F /* Srouce */,
+				9A445B762017650A00DCB11F /* Source */,
 				9A445B63201764F800DCB11F /* PSea */,
 				9A445B62201764F800DCB11F /* Products */,
 				FEA8B5309906FDC5F26EC109 /* Pods */,
@@ -82,12 +82,12 @@
 			path = PSea;
 			sourceTree = "<group>";
 		};
-		9A445B762017650A00DCB11F /* Srouce */ = {
+		9A445B762017650A00DCB11F /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				9A445B772017651900DCB11F /* PSea.swift */,
 			);
-			path = Srouce;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		FEA8B5309906FDC5F26EC109 /* Pods */ = {
