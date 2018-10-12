@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 public typealias SccuessCallBack = ((_ parseValue:Any?,_ data:Any)->())
-public typealias ErrorCallBack = ((_ response:DataResponse<Any>,_ code:Int,_ message:String)->())
+public typealias ErrorCallBack = ((_ response:DataResponse<Any>,_ ret:String,_ message:String)->())
 public typealias FailureCallBack = ((_ response:DataResponse<Any>,_ error:Error)->())
 
 public protocol PSea: class {
