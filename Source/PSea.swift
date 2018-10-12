@@ -49,9 +49,17 @@ extension PSea {
         self.successHandler = { (parse,data) in
             do{
                 if let handler = success {
-                    let data = try JSONSerialization.data(withJSONObject: parse as Any, options: .prettyPrinted)
-                    let model = try JSONDecoder().decode(T.self, from: data)
-                    handler(model,data)
+                    if let parseData = parse as? [String:Any] {
+                        let data = try JSONSerialization.data(withJSONObject: parseData as Any, options: .prettyPrinted)
+                        let model = try JSONDecoder().decode(T.self, from: data)
+                        handler(model,data)
+                    }else if let parseData = parse as? [Any] {
+                        let data = try JSONSerialization.data(withJSONObject: parseData as Any, options: .prettyPrinted)
+                        let model = try JSONDecoder().decode(T.self, from: data)
+                        handler(model,data)
+                    }else{
+                        handler(nil,data)
+                    }
                 }
             }catch{
                 if let handler = success {

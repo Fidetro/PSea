@@ -111,7 +111,6 @@
 				9A445B5E201764F800DCB11F /* Frameworks */,
 				9A445B5F201764F800DCB11F /* Resources */,
 				E6DE49E18771A41A82A80A5D /* [CP] Embed Pods Frameworks */,
-				534B961EE267CA36E1FD407F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,21 +169,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		534B961EE267CA36E1FD407F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PSea/Pods-PSea-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		BAAC68A50C77AD843BC101D5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
