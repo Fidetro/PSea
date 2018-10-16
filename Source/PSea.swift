@@ -30,7 +30,8 @@ public protocol PSea: class {
     /// 参数编码
     func encoding() -> ParameterEncoding
     
-    func complete(_ completionHandler: @escaping ((DataResponse<Any>) -> ()))
+    func request(_ completionHandler: @escaping ((DataResponse<Any>) -> ()))
+    func upload(multipartFormData: @escaping (MultipartFormData) -> Void) -> PSea
     func successParse(response: DataResponse<Any>)
     func errorParse(response: DataResponse<Any>)
     func failureParse(response:DataResponse<Any>,error: Error)
@@ -39,7 +40,7 @@ public protocol PSea: class {
 
 extension PSea {
     
-    public func complete(_ completionHandler: @escaping ((DataResponse<Any>) -> ())) {
+    public func request(_ completionHandler: @escaping ((DataResponse<Any>) -> ())) {
         let url = baseURL()+requestURI()
         Alamofire.request(url, method: method(), parameters: parameters(), encoding: encoding(), headers: headers()).responseJSON(completionHandler: completionHandler)
     }
@@ -73,9 +74,9 @@ extension PSea {
     @discardableResult
     public func success(_ success:((_ response:Any?,_ data:Any)->())?) -> PSea {
         self.successHandler = { (parse,data) in
-                if let handler = success {
-                    handler(parse,data)
-                }
+            if let handler = success {
+                handler(parse,data)
+            }
         }
         return self
     }
@@ -94,13 +95,35 @@ extension PSea {
     
     @discardableResult
     public func request() -> PSea {
-        complete {  (response) in
+        request {  (response) in
             switch response.result {
             case .success( _):
                 self.successParse(response: response)
                 self.errorParse(response: response)
             case .failure(let error):
                 self.failureParse(response: response, error: error)
+            }
+        }
+        return self
+    }
+    
+    public func upload(multipartFormData: @escaping (MultipartFormData) -> Void) -> PSea {
+        let url = baseURL()+requestURI()
+        Alamofire.upload(multipartFormData: multipartFormData, to: url, method: method(), headers: headers()) { (encodingResult) in
+            switch encodingResult {
+            case .success(let request, _, _):
+                request.responseJSON(completionHandler: { (response) in
+                    switch response.result {
+                    case .success( _):
+                        self.successParse(response: response)
+                        self.errorParse(response: response)
+                    case .failure(let error):
+                        self.failureParse(response: response, error: error)
+                    }
+                })
+                
+            case .failure(let error):
+                self.failureParse(response: DataResponse(request: nil, response: nil, data: nil, result: .failure(error)), error: error)
             }
         }
         return self
