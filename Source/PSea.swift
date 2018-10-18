@@ -16,7 +16,7 @@ public protocol PSea: class {
     var successHandler : SccuessCallBack?{get set}
     var errorHandler : ErrorCallBack?{get set}
     var failureHandler : FailureCallBack?{get set}
-    
+    var requestInterval : TimeInterval {get set}
     /// 请求方式
     func method() -> HTTPMethod
     /// 设置域名
@@ -95,6 +95,9 @@ extension PSea {
     
     @discardableResult
     public func request() -> PSea {
+        
+        guard PSeaQueue.share.set(object: self) else { return self }
+        
         request {  (response) in
             switch response.result {
             case .success( _):
@@ -108,6 +111,9 @@ extension PSea {
     }
     
     public func upload(multipartFormData: @escaping (MultipartFormData) -> Void) -> PSea {
+        
+        guard PSeaQueue.share.set(object: self) else { return self }
+        
         let url = baseURL()+requestURI()
         Alamofire.upload(multipartFormData: multipartFormData, to: url, method: method(), headers: headers()) { (encodingResult) in
             switch encodingResult {

@@ -7,16 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C1D325BF8E4E181229AC1D2 /* Pods_PSea.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6C69DA820E597FBBC318EF /* Pods_PSea.framework */; };
+		309EB7509BE8A90B818C6F9F /* Pods_PSeaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 637CE056A1EA2DA26AA58907 /* Pods_PSeaTests.framework */; };
+		9A2980BA217828D3004307D7 /* PSeaQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2980B9217828D3004307D7 /* PSeaQueue.swift */; };
+		9A2980C9217865E9004307D7 /* PSeaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2980C8217865E9004307D7 /* PSeaTests.swift */; };
+		9A2980D0217866CB004307D7 /* PSea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A445B772017651900DCB11F /* PSea.swift */; };
+		9A2980D1217866D2004307D7 /* PSeaQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2980B9217828D3004307D7 /* PSeaQueue.swift */; };
+		9A2980D321786763004307D7 /* TestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2980D221786763004307D7 /* TestRequest.swift */; };
 		9A445B65201764F800DCB11F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A445B64201764F800DCB11F /* AppDelegate.swift */; };
 		9A445B67201764F800DCB11F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A445B66201764F800DCB11F /* ViewController.swift */; };
 		9A445B6A201764F800DCB11F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A445B68201764F800DCB11F /* Main.storyboard */; };
 		9A445B6C201764F800DCB11F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A445B6B201764F800DCB11F /* Assets.xcassets */; };
 		9A445B6F201764F800DCB11F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A445B6D201764F800DCB11F /* LaunchScreen.storyboard */; };
 		9A445B782017651900DCB11F /* PSea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A445B772017651900DCB11F /* PSea.swift */; };
-		CDDDAB18D2A2FFFB6365375F /* Pods_PSea.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6C69DA820E597FBBC318EF /* Pods_PSea.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9A2980CB217865E9004307D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A445B59201764F800DCB11F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A445B60201764F800DCB11F;
+			remoteInfo = PSea;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		1D4710A5414B169BDFEF38E2 /* Pods-PSeaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSeaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PSeaTests/Pods-PSeaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2228BACB782063B15ECB0DEC /* Pods-PSea.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSea.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PSea/Pods-PSea.debug.xcconfig"; sourceTree = "<group>"; };
+		637CE056A1EA2DA26AA58907 /* Pods_PSeaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PSeaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A2980B9217828D3004307D7 /* PSeaQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSeaQueue.swift; sourceTree = "<group>"; };
+		9A2980C6217865E9004307D7 /* PSeaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PSeaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A2980C8217865E9004307D7 /* PSeaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSeaTests.swift; sourceTree = "<group>"; };
+		9A2980CA217865E9004307D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A2980D221786763004307D7 /* TestRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRequest.swift; sourceTree = "<group>"; };
 		9A445B61201764F800DCB11F /* PSea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PSea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A445B64201764F800DCB11F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A445B66201764F800DCB11F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -25,17 +49,25 @@
 		9A445B6E201764F800DCB11F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A445B70201764F800DCB11F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A445B772017651900DCB11F /* PSea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSea.swift; sourceTree = "<group>"; };
-		ACFEBD21BA2B322052B72BA0 /* Pods-PSea.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSea.release.xcconfig"; path = "Pods/Target Support Files/Pods-PSea/Pods-PSea.release.xcconfig"; sourceTree = "<group>"; };
+		B5BC497A848ECF54EFB1A492 /* Pods-PSea.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSea.release.xcconfig"; path = "Pods/Target Support Files/Pods-PSea/Pods-PSea.release.xcconfig"; sourceTree = "<group>"; };
+		C76DA39B42D3DD06DD26181A /* Pods-PSeaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSeaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PSeaTests/Pods-PSeaTests.release.xcconfig"; sourceTree = "<group>"; };
 		DB6C69DA820E597FBBC318EF /* Pods_PSea.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PSea.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E041BA5CC7A4EAA339F8824D /* Pods-PSea.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSea.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PSea/Pods-PSea.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9A2980C3217865E9004307D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				309EB7509BE8A90B818C6F9F /* Pods_PSeaTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A445B5E201764F800DCB11F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDDDAB18D2A2FFFB6365375F /* Pods_PSea.framework in Frameworks */,
+				1C1D325BF8E4E181229AC1D2 /* Pods_PSea.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,8 +78,19 @@
 			isa = PBXGroup;
 			children = (
 				DB6C69DA820E597FBBC318EF /* Pods_PSea.framework */,
+				637CE056A1EA2DA26AA58907 /* Pods_PSeaTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A2980C7217865E9004307D7 /* PSeaTests */ = {
+			isa = PBXGroup;
+			children = (
+				9A2980C8217865E9004307D7 /* PSeaTests.swift */,
+				9A2980CA217865E9004307D7 /* Info.plist */,
+				9A2980D221786763004307D7 /* TestRequest.swift */,
+			);
+			path = PSeaTests;
 			sourceTree = "<group>";
 		};
 		9A445B58201764F800DCB11F = {
@@ -55,6 +98,7 @@
 			children = (
 				9A445B762017650A00DCB11F /* Source */,
 				9A445B63201764F800DCB11F /* PSea */,
+				9A2980C7217865E9004307D7 /* PSeaTests */,
 				9A445B62201764F800DCB11F /* Products */,
 				FEA8B5309906FDC5F26EC109 /* Pods */,
 				23463C4A58153943457CBC0F /* Frameworks */,
@@ -65,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				9A445B61201764F800DCB11F /* PSea.app */,
+				9A2980C6217865E9004307D7 /* PSeaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				9A445B772017651900DCB11F /* PSea.swift */,
+				9A2980B9217828D3004307D7 /* PSeaQueue.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -93,8 +139,10 @@
 		FEA8B5309906FDC5F26EC109 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E041BA5CC7A4EAA339F8824D /* Pods-PSea.debug.xcconfig */,
-				ACFEBD21BA2B322052B72BA0 /* Pods-PSea.release.xcconfig */,
+				1D4710A5414B169BDFEF38E2 /* Pods-PSeaTests.debug.xcconfig */,
+				C76DA39B42D3DD06DD26181A /* Pods-PSeaTests.release.xcconfig */,
+				2228BACB782063B15ECB0DEC /* Pods-PSea.debug.xcconfig */,
+				B5BC497A848ECF54EFB1A492 /* Pods-PSea.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -102,15 +150,35 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9A2980C5217865E9004307D7 /* PSeaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A2980CD217865E9004307D7 /* Build configuration list for PBXNativeTarget "PSeaTests" */;
+			buildPhases = (
+				F3AEB9C6F9B5457BFA7B0C37 /* [CP] Check Pods Manifest.lock */,
+				9A2980C2217865E9004307D7 /* Sources */,
+				9A2980C3217865E9004307D7 /* Frameworks */,
+				9A2980C4217865E9004307D7 /* Resources */,
+				2DD0C121D6A2A66EC63232C4 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A2980CC217865E9004307D7 /* PBXTargetDependency */,
+			);
+			name = PSeaTests;
+			productName = PSeaTests;
+			productReference = 9A2980C6217865E9004307D7 /* PSeaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		9A445B60201764F800DCB11F /* PSea */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A445B73201764F800DCB11F /* Build configuration list for PBXNativeTarget "PSea" */;
 			buildPhases = (
-				BAAC68A50C77AD843BC101D5 /* [CP] Check Pods Manifest.lock */,
+				57CD7C4B2FBEDB70F1CC1389 /* [CP] Check Pods Manifest.lock */,
 				9A445B5D201764F800DCB11F /* Sources */,
 				9A445B5E201764F800DCB11F /* Frameworks */,
 				9A445B5F201764F800DCB11F /* Resources */,
-				E6DE49E18771A41A82A80A5D /* [CP] Embed Pods Frameworks */,
+				7387EA1F4F8089108DAC519F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,10 +195,15 @@
 		9A445B59201764F800DCB11F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Fidetro;
 				TargetAttributes = {
+					9A2980C5217865E9004307D7 = {
+						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9A445B60201764F800DCB11F;
+					};
 					9A445B60201764F800DCB11F = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -151,11 +224,19 @@
 			projectRoot = "";
 			targets = (
 				9A445B60201764F800DCB11F /* PSea */,
+				9A2980C5217865E9004307D7 /* PSeaTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9A2980C4217865E9004307D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A445B5F201764F800DCB11F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -169,16 +250,42 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BAAC68A50C77AD843BC101D5 /* [CP] Check Pods Manifest.lock */ = {
+		2DD0C121D6A2A66EC63232C4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PSeaTests/Pods-PSeaTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PSeaTests/Pods-PSeaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57CD7C4B2FBEDB70F1CC1389 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-PSea-checkManifestLockResult.txt",
 			);
@@ -187,16 +294,20 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E6DE49E18771A41A82A80A5D /* [CP] Embed Pods Frameworks */ = {
+		7387EA1F4F8089108DAC519F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PSea/Pods-PSea-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 			);
@@ -205,13 +316,47 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PSea/Pods-PSea-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F3AEB9C6F9B5457BFA7B0C37 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PSeaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9A2980C2217865E9004307D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A2980D0217866CB004307D7 /* PSea.swift in Sources */,
+				9A2980D321786763004307D7 /* TestRequest.swift in Sources */,
+				9A2980D1217866D2004307D7 /* PSeaQueue.swift in Sources */,
+				9A2980C9217865E9004307D7 /* PSeaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9A445B5D201764F800DCB11F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A2980BA217828D3004307D7 /* PSeaQueue.swift in Sources */,
 				9A445B782017651900DCB11F /* PSea.swift in Sources */,
 				9A445B67201764F800DCB11F /* ViewController.swift in Sources */,
 				9A445B65201764F800DCB11F /* AppDelegate.swift in Sources */,
@@ -219,6 +364,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A2980CC217865E9004307D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A445B60201764F800DCB11F /* PSea */;
+			targetProxy = 9A2980CB217865E9004307D7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9A445B68201764F800DCB11F /* Main.storyboard */ = {
@@ -240,6 +393,51 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9A2980CE217865E9004307D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D4710A5414B169BDFEF38E2 /* Pods-PSeaTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J3BJ7G2PUN;
+				INFOPLIST_FILE = PSeaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.karim.PSeaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PSea.app/PSea";
+			};
+			name = Debug;
+		};
+		9A2980CF217865E9004307D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C76DA39B42D3DD06DD26181A /* Pods-PSeaTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J3BJ7G2PUN;
+				INFOPLIST_FILE = PSeaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.karim.PSeaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PSea.app/PSea";
+			};
+			name = Release;
+		};
 		9A445B71201764F800DCB11F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -349,7 +547,7 @@
 		};
 		9A445B74201764F800DCB11F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E041BA5CC7A4EAA339F8824D /* Pods-PSea.debug.xcconfig */;
+			baseConfigurationReference = 2228BACB782063B15ECB0DEC /* Pods-PSea.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -358,14 +556,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fidetro.PSea;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		9A445B75201764F800DCB11F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ACFEBD21BA2B322052B72BA0 /* Pods-PSea.release.xcconfig */;
+			baseConfigurationReference = B5BC497A848ECF54EFB1A492 /* Pods-PSea.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -374,7 +572,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Fidetro.PSea;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -382,6 +580,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9A2980CD217865E9004307D7 /* Build configuration list for PBXNativeTarget "PSeaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A2980CE217865E9004307D7 /* Debug */,
+				9A2980CF217865E9004307D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9A445B5C201764F800DCB11F /* Build configuration list for PBXProject "PSea" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -1,0 +1,6 @@
+framework module Pods_PSeaTests {
+  umbrella header "Pods-PSeaTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
