@@ -58,6 +58,8 @@ extension PSea {
                         let data = try JSONSerialization.data(withJSONObject: parseData as Any, options: .prettyPrinted)
                         let model = try JSONDecoder().decode(T.self, from: data)
                         handler(model,data)
+                    }else if let parseData = parse as? T {
+                        handler(parseData,data)
                     }else{
                         handler(nil,data)
                     }
