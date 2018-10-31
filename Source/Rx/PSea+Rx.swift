@@ -12,7 +12,7 @@ import Alamofire
 
 public enum Result<T> {
     case success(T?,_ parseValue:Any?,_ data:Any)
-    case error(_ response:DataResponse<Any>,_ code:Int,_ message:String)
+    case error(_ response:DataResponse<Any>,_ ret:String,_ message:String)
     case failure(_ response:DataResponse<Any>,_ error:Error)
 }
 
@@ -27,8 +27,8 @@ public extension Reactive where Base: PSea {
                     .success({ (parseValue, data) in
                     observer.onNext(.success(nil,parseValue,data))
                 })
-                    .error { (response, code, message) in
-                    observer.onNext(.error(response,code,message))
+                    .error { (response, ret, message) in
+                    observer.onNext(.error(response,ret,message))
                     }
                     .failure { (response, error) in
                         observer.onNext(.failure(response,error))
@@ -42,8 +42,8 @@ public extension Reactive where Base: PSea {
             base?.request().success(type) { (parseData, data) in
                 observer.onNext(.success(parseData,nil,data))
                 }
-                .error { (response, code, message) in
-                    observer.onNext(.error(response,code,message))
+                .error { (response, ret, message) in
+                    observer.onNext(.error(response,ret,message))
                 }
                 .failure { (response, error) in
                     observer.onNext(.failure(response,error))
@@ -63,8 +63,8 @@ public extension Reactive where Base: PSea {
                     .success({ (parseValue, data) in
                     observer.onNext(.success(nil,parseValue,data))
                 })
-                    .error { (response, code, message) in
-                    observer.onNext(.error(response,code,message))
+                    .error { (response, ret, message) in
+                    observer.onNext(.error(response,ret,message))
                     }
                     .failure { (response, error) in
                         observer.onNext(.failure(response,error))
@@ -80,8 +80,8 @@ public extension Reactive where Base: PSea {
                 .success(type) { (parseData, data) in
                 observer.onNext(.success(parseData,nil,data))
                 }
-                .error { (response, code, message) in
-                    observer.onNext(.error(response,code,message))
+                .error { (response, ret, message) in
+                    observer.onNext(.error(response,ret,message))
                 }
                 .failure { (response, error) in
                     observer.onNext(.failure(response,error))
