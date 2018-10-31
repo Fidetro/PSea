@@ -9,7 +9,6 @@
 import XCTest
 import Alamofire
 
-
 class PSeaTests: XCTestCase {
 
     override func setUp() {
