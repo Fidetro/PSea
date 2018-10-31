@@ -54,6 +54,7 @@ public extension Reactive where Base: PSea {
     }
     
     public func upload<T:Decodable>(multipartFormData: @escaping (MultipartFormData) -> Void, map type:T.Type?=nil) -> Observable<Result<T>> {
+        
         guard let type = type else {
             
             return Observable.create({ [weak base] (observer) -> Disposable in
