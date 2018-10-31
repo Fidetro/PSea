@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.dependency "Alamofire","~> 4.7.3"
 
   s.subspec "RxSwift" do |ss|
-  ss.source_files  = "Source/PSea/*.{h,m,swift}","Source/PSea/*.{h,m,swift}"
+  ss.source_files  = "Source/PSea/*.{h,m,swift}","Source/Rx/*.{h,m,swift}"
   ss.dependency "Alamofire","~> 4.7.3"
   ss.dependency "RxSwift", "~> 4.3.1"
   end
