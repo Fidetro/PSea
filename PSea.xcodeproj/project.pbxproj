@@ -20,6 +20,7 @@
 		9A445B6C201764F800DCB11F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A445B6B201764F800DCB11F /* Assets.xcassets */; };
 		9A445B6F201764F800DCB11F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A445B6D201764F800DCB11F /* LaunchScreen.storyboard */; };
 		9A445B782017651900DCB11F /* PSea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A445B772017651900DCB11F /* PSea.swift */; };
+		9A8E809521895DA600E24441 /* PSea+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8E809421895DA600E24441 /* PSea+Rx.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		9A445B6E201764F800DCB11F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A445B70201764F800DCB11F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A445B772017651900DCB11F /* PSea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSea.swift; sourceTree = "<group>"; };
+		9A8E809421895DA600E24441 /* PSea+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PSea+Rx.swift"; sourceTree = "<group>"; };
 		B5BC497A848ECF54EFB1A492 /* Pods-PSea.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSea.release.xcconfig"; path = "Pods/Target Support Files/Pods-PSea/Pods-PSea.release.xcconfig"; sourceTree = "<group>"; };
 		C76DA39B42D3DD06DD26181A /* Pods-PSeaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PSeaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PSeaTests/Pods-PSeaTests.release.xcconfig"; sourceTree = "<group>"; };
 		DB6C69DA820E597FBBC318EF /* Pods_PSea.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PSea.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,10 +132,27 @@
 		9A445B762017650A00DCB11F /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				9A8E809321895D8D00E24441 /* Rx */,
+				9A8E809221895D8200E24441 /* PSea */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		9A8E809221895D8200E24441 /* PSea */ = {
+			isa = PBXGroup;
+			children = (
 				9A445B772017651900DCB11F /* PSea.swift */,
 				9A2980B9217828D3004307D7 /* PSeaQueue.swift */,
 			);
-			path = Source;
+			path = PSea;
+			sourceTree = "<group>";
+		};
+		9A8E809321895D8D00E24441 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				9A8E809421895DA600E24441 /* PSea+Rx.swift */,
+			);
+			path = Rx;
 			sourceTree = "<group>";
 		};
 		FEA8B5309906FDC5F26EC109 /* Pods */ = {
@@ -260,12 +279,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PSeaTests/Pods-PSeaTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -304,12 +325,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PSea/Pods-PSea-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -356,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A8E809521895DA600E24441 /* PSea+Rx.swift in Sources */,
 				9A2980BA217828D3004307D7 /* PSeaQueue.swift in Sources */,
 				9A445B782017651900DCB11F /* PSea.swift in Sources */,
 				9A445B67201764F800DCB11F /* ViewController.swift in Sources */,
