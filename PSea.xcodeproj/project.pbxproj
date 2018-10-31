@@ -132,7 +132,7 @@
 		9A445B762017650A00DCB11F /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				9A8E809321895D8D00E24441 /* PSea+Rx */,
+				9A8E809321895D8D00E24441 /* Rx */,
 				9A8E809221895D8200E24441 /* PSea */,
 			);
 			path = Source;
@@ -147,12 +147,12 @@
 			path = PSea;
 			sourceTree = "<group>";
 		};
-		9A8E809321895D8D00E24441 /* PSea+Rx */ = {
+		9A8E809321895D8D00E24441 /* Rx */ = {
 			isa = PBXGroup;
 			children = (
 				9A8E809421895DA600E24441 /* PSea+Rx.swift */,
 			);
-			path = "PSea+Rx";
+			path = Rx;
 			sourceTree = "<group>";
 		};
 		FEA8B5309906FDC5F26EC109 /* Pods */ = {
