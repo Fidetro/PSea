@@ -20,6 +20,7 @@
 		9A445B6C201764F800DCB11F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A445B6B201764F800DCB11F /* Assets.xcassets */; };
 		9A445B6F201764F800DCB11F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A445B6D201764F800DCB11F /* LaunchScreen.storyboard */; };
 		9A445B782017651900DCB11F /* PSea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A445B772017651900DCB11F /* PSea.swift */; };
+		9A714E41218A918000DC1130 /* TestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2980D221786763004307D7 /* TestRequest.swift */; };
 		9A8E809521895DA600E24441 /* PSea+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8E809421895DA600E24441 /* PSea+Rx.swift */; };
 /* End PBXBuildFile section */
 
@@ -382,6 +383,7 @@
 				9A8E809521895DA600E24441 /* PSea+Rx.swift in Sources */,
 				9A2980BA217828D3004307D7 /* PSeaQueue.swift in Sources */,
 				9A445B782017651900DCB11F /* PSea.swift in Sources */,
+				9A714E41218A918000DC1130 /* TestRequest.swift in Sources */,
 				9A445B67201764F800DCB11F /* ViewController.swift in Sources */,
 				9A445B65201764F800DCB11F /* AppDelegate.swift in Sources */,
 			);

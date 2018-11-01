@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 public class PSeaQueue: NSObject {
-    typealias T = PSea
+    typealias T = PSeaType
     static let share = PSeaQueue()
     let lock = NSLock()
     var queue = [String:T]()
@@ -18,7 +18,7 @@ public class PSeaQueue: NSObject {
         lock.lock()
         let mirror = Mirror.init(reflecting: object)
         let key = "\(mirror.subjectType)"
-        if object.requestInterval == 0 {
+        if object.requestInterval() == 0 {
             lock.unlock()
             return true
         }
@@ -26,7 +26,7 @@ public class PSeaQueue: NSObject {
             lock.unlock()
             return false
         }
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + object.requestInterval, execute: {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + object.requestInterval(), execute: {
             self.queue.removeValue(forKey: key)
         })
         queue[key] = object
