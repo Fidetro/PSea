@@ -12,11 +12,56 @@ public typealias SccuessCallBack = ((_ parseValue:Any?,_ data:Any)->())
 public typealias ErrorCallBack = ((_ response:DataResponse<Any>,_ code:Int,_ message:String)->())
 public typealias FailureCallBack = ((_ response:DataResponse<Any>,_ error:Error)->())
 
-public protocol PSea: class {
+open class PSea: PSeaType {
+    public var successHandler: SccuessCallBack?
+    
+    public var errorHandler: ErrorCallBack?
+    
+    public var failureHandler: FailureCallBack?
+        
+    open func method() -> HTTPMethod {
+        return .get
+    }
+    
+    open func baseURL() -> String {
+        return ""
+    }
+    
+    open func requestURI() -> String {
+        return ""
+    }
+    
+    open func parameters() -> Parameters? {
+        return nil
+    }
+    
+    open func headers() -> HTTPHeaders? {
+        return nil
+    }
+    
+    open func encoding() -> ParameterEncoding {
+        return URLEncoding(destination: .httpBody)
+    }
+    
+    open func successParse(response: DataResponse<Any>) {
+        
+    }
+    
+    open func errorParse(response: DataResponse<Any>) {
+        
+    }
+    
+    open func failureParse(response: DataResponse<Any>, error: Error) {
+        
+    }
+    
+    
+}
+
+public protocol PSeaType: AnyObject {
     var successHandler : SccuessCallBack?{get set}
     var errorHandler : ErrorCallBack?{get set}
     var failureHandler : FailureCallBack?{get set}
-    var requestInterval : TimeInterval {get set}
     /// 请求方式
     func method() -> HTTPMethod
     /// 设置域名
@@ -31,14 +76,18 @@ public protocol PSea: class {
     func encoding() -> ParameterEncoding
     
     func request(_ completionHandler: @escaping ((DataResponse<Any>) -> ()))
-    func upload(multipartFormData: @escaping (MultipartFormData) -> Void) -> PSea
+    func upload(multipartFormData: @escaping (MultipartFormData) -> Void) -> PSeaType
     func successParse(response: DataResponse<Any>)
     func errorParse(response: DataResponse<Any>)
     func failureParse(response:DataResponse<Any>,error: Error)
-    
+    func requestInterval() -> TimeInterval
 }
 
-extension PSea {
+extension PSeaType {
+    
+    public func requestInterval() -> TimeInterval {
+        return 0.0
+    }
     
     public func request(_ completionHandler: @escaping ((DataResponse<Any>) -> ())) {
         let url = baseURL()+requestURI()
@@ -46,7 +95,7 @@ extension PSea {
     }
     
     @discardableResult
-    public func success<T:Decodable>(_ type:T.Type?=nil,_ success:((_ response:T?,_ data:Any)->())?) -> PSea {
+    public func success<T:Decodable>(_ type:T.Type?=nil,_ success:((_ response:T?,_ data:Any)->())?) -> PSeaType {
         self.successHandler = { (parse,data) in
             do{
                 if let handler = success {
@@ -74,7 +123,7 @@ extension PSea {
     }
     
     @discardableResult
-    public func success(_ success:((_ response:Any?,_ data:Any)->())?) -> PSea {
+    public func success(_ success:((_ response:Any?,_ data:Any)->())?) -> PSeaType {
         self.successHandler = { (parse,data) in
             if let handler = success {
                 handler(parse,data)
@@ -84,19 +133,19 @@ extension PSea {
     }
     
     @discardableResult
-    public func error(_ error:ErrorCallBack?) -> PSea {
+    public func error(_ error:ErrorCallBack?) -> PSeaType {
         self.errorHandler = error
         return self
     }
     
     @discardableResult
-    public func failure(_ failure:FailureCallBack?) -> PSea {
+    public func failure(_ failure:FailureCallBack?) -> PSeaType {
         self.failureHandler = failure
         return self
     }
     
     @discardableResult
-    public func request() -> PSea {
+    public func request() -> PSeaType {
         
         guard PSeaQueue.share.set(object: self) else { return self }
         
@@ -112,7 +161,7 @@ extension PSea {
         return self
     }
     
-    public func upload(multipartFormData: @escaping (MultipartFormData) -> Void) -> PSea {
+    public func upload(multipartFormData: @escaping (MultipartFormData) -> Void) -> PSeaType {
         
         guard PSeaQueue.share.set(object: self) else { return self }
         

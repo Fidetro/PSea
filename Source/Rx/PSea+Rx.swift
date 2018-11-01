@@ -15,7 +15,7 @@ public enum Result<T> {
     case error(_ response:DataResponse<Any>,_ code:Int,_ message:String)
     case failure(_ response:DataResponse<Any>,_ error:Error)
 }
-
+extension PSea: ReactiveCompatible {}
 public extension Reactive where Base: PSea {
     
     public func request<T:Decodable>(map type:T.Type?=nil) -> Observable<Result<T>> {

@@ -8,13 +8,17 @@
 
 import UIKit
 import Alamofire
+import RxSwift
+
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-   
-
+        let test = TestRequest()
+        let o = Observable.just(test)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
