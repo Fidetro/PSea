@@ -62,7 +62,7 @@ open class PSea: PSeaType {
     }
     
     @discardableResult
-    public func request() -> PSea {
+    open func request() -> PSea {
         
         guard PSeaQueue.share.set(object: self) else { return self }
         
@@ -78,7 +78,7 @@ open class PSea: PSeaType {
         return self
     }
     
-    public func upload(multipartFormData: @escaping (MultipartFormData) -> Void) -> PSea {
+    open func upload(multipartFormData: @escaping (MultipartFormData) -> Void) -> PSea {
         
         guard PSeaQueue.share.set(object: self) else { return self }
         
@@ -104,7 +104,7 @@ open class PSea: PSeaType {
     }
     
     @discardableResult
-    public func success<T:Decodable>(_ type:T.Type?=nil,_ success:((_ response:T?,_ data:Any)->())?) -> PSea {
+    open func success<T:Decodable>(_ type:T.Type?=nil,_ success:((_ response:T?,_ data:Any)->())?) -> PSea {
         self.successHandler = { (parse,data) in
             do{
                 if let handler = success {
