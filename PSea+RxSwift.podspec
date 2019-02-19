@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "PSea+RxSwift"
-  s.version      = "1.1.9"
+  s.version      = "1.2.0"
   s.summary      = "PSea"
   s.homepage     = "https://github.com/Fidetro/PSea"
   s.license      = { :type => "MIT", :file => "LICENSE" }
@@ -11,5 +11,6 @@ Pod::Spec.new do |s|
   s.source_files  = "Source/Rx/*.{h,m,swift}"
 
   s.dependency "PSea"
+  s.dependency "RxSwift", "~> 4.3.1"
 
 end
