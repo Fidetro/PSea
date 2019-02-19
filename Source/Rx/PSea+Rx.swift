@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 import Alamofire
-
+import PSea
 public enum Result<T> {
     case success(T?,_ parseValue:Any?,_ data:Any)
     case error(_ response:DataResponse<Any>,_ code:Int,_ message:String)
