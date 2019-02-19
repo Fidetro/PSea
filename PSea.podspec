@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "PSea"
-  s.version      = "1.1.8"
+  s.version      = "1.1.9"
   s.summary      = "PSea"
   s.homepage     = "https://github.com/Fidetro/PSea"
   s.license      = { :type => "MIT", :file => "LICENSE" }
