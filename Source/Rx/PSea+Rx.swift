@@ -14,6 +14,7 @@ public enum Result<T> {
     case success(T?,_ parseValue:Any?,_ data:Any)
     case error(_ response:DataResponse<Any>,_ code:Int,_ message:String)
     case failure(_ response:DataResponse<Any>,_ error:Error)
+    case progress(_ progress:Progress)
 }
 extension PSea: ReactiveCompatible {}
 public extension Reactive where Base: PSea {
@@ -25,14 +26,17 @@ public extension Reactive where Base: PSea {
             return Observable.create({ [weak base] (observer) -> Disposable in
                 base?.request()
                     .success({ (parseValue, data) in
-                    observer.onNext(.success(nil,parseValue,data))
-                })
+                        observer.onNext(.success(nil,parseValue,data))
+                    })
                     .error { (response, code, message) in
-                    observer.onNext(.error(response,code,message))
-                    }
-                    .failure { (response, error) in
-                        observer.onNext(.failure(response,error))
+                        observer.onNext(.error(response,code,message))
                 }
+                .failure { (response, error) in
+                    observer.onNext(.failure(response,error))
+                }
+                .progress({ (progress) in
+                    observer.onNext(.progress(progress))
+                })
                 
                 return Disposables.create {}
             })
@@ -41,13 +45,16 @@ public extension Reactive where Base: PSea {
         return Observable.create({ [weak base] (observer) -> Disposable in
             base?.request().success(type) { (parseData, data) in
                 observer.onNext(.success(parseData,nil,data))
-                }
-                .error { (response, code, message) in
-                    observer.onNext(.error(response,code,message))
-                }
-                .failure { (response, error) in
-                    observer.onNext(.failure(response,error))
             }
+            .error { (response, code, message) in
+                observer.onNext(.error(response,code,message))
+            }
+            .failure { (response, error) in
+                observer.onNext(.failure(response,error))
+            }
+            .progress({ (progress) in
+                observer.onNext(.progress(progress))
+            })
             
             return Disposables.create {}
         })
@@ -61,14 +68,17 @@ public extension Reactive where Base: PSea {
                 
                 base?.upload(multipartFormData: multipartFormData)
                     .success({ (parseValue, data) in
-                    observer.onNext(.success(nil,parseValue,data))
-                })
+                        observer.onNext(.success(nil,parseValue,data))
+                    })
                     .error { (response, code, message) in
-                    observer.onNext(.error(response,code,message))
-                    }
-                    .failure { (response, error) in
-                        observer.onNext(.failure(response,error))
+                        observer.onNext(.error(response,code,message))
                 }
+                .failure { (response, error) in
+                    observer.onNext(.failure(response,error))
+                }
+                .progress({ (progress) in
+                    observer.onNext(.progress(progress))
+                })
                 
                 return Disposables.create {}
             })
@@ -78,14 +88,16 @@ public extension Reactive where Base: PSea {
             
             base?.upload(multipartFormData: multipartFormData)
                 .success(type) { (parseData, data) in
-                observer.onNext(.success(parseData,nil,data))
-                }
-                .error { (response, code, message) in
-                    observer.onNext(.error(response,code,message))
-                }
-                .failure { (response, error) in
-                    observer.onNext(.failure(response,error))
+                    observer.onNext(.success(parseData,nil,data))
             }
+            .error { (response, code, message) in
+                observer.onNext(.error(response,code,message))
+            }
+            .failure { (response, error) in
+                observer.onNext(.failure(response,error))
+            }.progress({ (progress) in
+                observer.onNext(.progress(progress))
+            })
             
             return Disposables.create {}
         })

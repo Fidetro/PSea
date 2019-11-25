@@ -11,6 +11,7 @@ import Alamofire
 public typealias SccuessCallBack = ((_ parseValue:Any?,_ data:Any)->())
 public typealias ErrorCallBack = ((_ response:DataResponse<Any>,_ code:Int,_ message:String)->())
 public typealias FailureCallBack = ((_ response:DataResponse<Any>,_ error:Error)->())
+public typealias ProgressCallBack = ((_ progress:Progress)->())
 
 open class PSea: PSeaType {
     public var successHandler: SccuessCallBack?
@@ -18,6 +19,8 @@ open class PSea: PSeaType {
     public var errorHandler: ErrorCallBack?
     
     public var failureHandler: FailureCallBack?
+    
+    public var progressHandler: ProgressCallBack?
     
     required public init() { }
     
@@ -61,18 +64,24 @@ open class PSea: PSeaType {
         
     }
     
+    open func progressParse(progress: Progress) {
+        if let progressHandler = progressHandler {
+            progressHandler(progress)
+        }
+    }
+    
     @discardableResult
     open func request() -> PSea {
         
         guard PSeaQueue.share.set(object: self) else { return self }
         
-        request {  (response) in
+        request { [weak self] (response) in
             switch response.result {
             case .success( _):
-                self.successParse(response: response)
-                self.errorParse(response: response)
+                self?.successParse(response: response)
+                self?.errorParse(response: response)
             case .failure(let error):
-                self.failureParse(response: response, error: error)
+                self?.failureParse(response: response, error: error)
             }
         }
         return self
@@ -83,21 +92,24 @@ open class PSea: PSeaType {
         guard PSeaQueue.share.set(object: self) else { return self }
         
         let url = baseURL()+requestURI()
-        Alamofire.upload(multipartFormData: multipartFormData, to: url, method: method(), headers: headers()) { (encodingResult) in
+        Alamofire.upload(multipartFormData: multipartFormData, to: url, method: method(), headers: headers()) { [weak self] (encodingResult) in
             switch encodingResult {
             case .success(let request, _, _):
+                request.uploadProgress { (progress) in
+                    self?.progressParse(progress: progress)
+                }
                 request.responseJSON(completionHandler: { (response) in
                     switch response.result {
-                    case .success( _):
-                        self.successParse(response: response)
-                        self.errorParse(response: response)
+                    case .success(_):
+                        self?.successParse(response: response)
+                        self?.errorParse(response: response)
                     case .failure(let error):
-                        self.failureParse(response: response, error: error)
+                        self?.failureParse(response: response, error: error)
                     }
                 })
                 
             case .failure(let error):
-                self.failureParse(response: DataResponse(request: nil, response: nil, data: nil, result: .failure(error)), error: error)
+                self?.failureParse(response: DataResponse(request: nil, response: nil, data: nil, result: .failure(error)), error: error)
             }
         }
         return self
@@ -150,6 +162,11 @@ open class PSea: PSeaType {
     @discardableResult
     public func failure(_ failure:FailureCallBack?) -> PSea {
         self.failureHandler = failure
+        return self
+    }
+    @discardableResult
+    public func progress(_ progressHandler:ProgressCallBack?) -> PSea {
+        self.progressHandler = progressHandler
         return self
     }
 }
