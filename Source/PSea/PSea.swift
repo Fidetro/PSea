@@ -74,7 +74,7 @@ open class PSea : PSeaType {
     }
     
     
-    public func request<T: Decodable>(_ t: T.Type,completionHandler: @escaping (Result<T, PSeaError>) -> Void) -> PSea {
+    @discardableResult public func request<T: Decodable>(_ t: T.Type,completionHandler: @escaping (Result<T, PSeaError>) -> Void) -> PSea {
         guard PSeaQueue.share.set(object: self) else { return self }
 
         let url = baseURL()+requestURI()
@@ -94,7 +94,7 @@ open class PSea : PSeaType {
         return self
     }
     
-    open func upload<T: Decodable>(_ t: T.Type,multipartFormData: @escaping (MultipartFormData) -> Void, progressHandler: ProgressHandler?, completionHandler: @escaping (Result<T, PSeaError>) -> Void) -> PSea {
+    @discardableResult open func upload<T: Decodable>(_ t: T.Type,multipartFormData: @escaping (MultipartFormData) -> Void, progressHandler: ProgressHandler?, completionHandler: @escaping (Result<T, PSeaError>) -> Void) -> PSea {
         
         guard PSeaQueue.share.set(object: self) else { return self }
         let url = baseURL()+requestURI()
