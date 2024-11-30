@@ -45,6 +45,8 @@ open class PSea : PSeaType {
 
     required public init() { }
     
+    var request: DataRequest?
+    
     open func method() -> HTTPMethod {
         return .get
     }
@@ -73,22 +75,28 @@ open class PSea : PSeaType {
         return URLEncoding(destination: .httpBody)
     }
     
+    open func cancel() {
+        request?.cancel()
+    }
     
-    @discardableResult public func request<T: Decodable>(_ t: T.Type,completionHandler: @escaping (Result<T, PSeaError>) -> Void) -> PSea {
+    @discardableResult open func request<T: Decodable>(_ t: T.Type,completionHandler: @escaping (Result<(T,Data), Error>) -> Void) -> PSea {
         guard PSeaQueue.share.set(object: self) else { return self }
-
         let url = baseURL()+requestURI()
-        AF.request(url, method: method(), parameters: parameters(), encoding: encoding(), headers: headers()).responseData { response in
+        self.request = AF.request(url, method: method(), parameters: parameters(), encoding: encoding(), headers: headers()).responseData { response in
             switch response.result {
             case .success(let data) :
                 do {
+                    print(url)
+                    print(String(data: data, encoding: .utf8) ?? "")
                     let model = try JSONDecoder().decode(t, from: data)
-                    completionHandler(.success(model))
+                    completionHandler(.success((model, data)))
                 } catch {
-                    completionHandler(.failure(.failure(error)))
+                    completionHandler(.failure(error))
                 }
             case .failure(let error) :
-                completionHandler(.failure(.failure(error)))
+                print(url)                
+                print(error.localizedDescription)
+                completionHandler(.failure(error))
             }
         }
         return self
